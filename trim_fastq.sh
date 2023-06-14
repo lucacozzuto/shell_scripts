@@ -55,13 +55,11 @@ fi
 
 if [ "$3" == "5" ]; then
 
-     #$catcmd $1 | awk '{if (NUM%4==3 || NUM%4==1) {print substr ($0, '$2'+1)} else {print $0} ; NUM++}' $outcmd > $4
      eval "$catcmd $1 | awk '{if (NUM%4==3 || NUM%4==1) {print substr (\$0, '$2'+1)} else {print \$0} ; NUM++}' $outcmd" > $4
 
 
 elif  [ "$3" == "3" ]; then
     
-     $catcmd $1 | awk '{if (NUM%4==3 || NUM%4==1) {print substr ($0, length($0)-'$2'+1, '$2')} else {print $0} ; NUM++}' $outcmd > $4
      eval "$catcmd $1 | awk '{if (NUM%4==3 || NUM%4==1) {print substr (\$0, length(\$0)-'$2'+1, '$2')} else {print \$0} ; NUM++}' $outcmd" > $4
 
 fi
