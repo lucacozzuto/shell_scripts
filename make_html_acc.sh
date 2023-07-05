@@ -20,6 +20,6 @@ Require user $1
 " > .htaccess 
 
 passwd=`echo $RANDOM | base64`
-htpasswd -b .htpasswd $1 $passwd
+htpasswd -cb .htpasswd $1 $passwd
 
 echo "The password is "$passwd
